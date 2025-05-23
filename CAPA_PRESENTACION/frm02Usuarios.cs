@@ -145,7 +145,7 @@ namespace CAPA_PRESENTACION
             }
 
         }
-
+        //estabamos probando algo
         private void dgviewCrudUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtcodUsuario.Text = dgviewCrudUsuarios.SelectedCells[0].Value.ToString();
