@@ -19,7 +19,7 @@ namespace CAPA_PRESENTACION
         {
             InitializeComponent();
         }
-
+        ////
         private void FrmPasajeros_Load(object sender, EventArgs e)
         {
             MtdMostrarPasajeros();
