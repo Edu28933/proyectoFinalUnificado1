@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B646573-0A2E-4A91-B71C-CEF1899C2013}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CAPA_PRESENTACION</RootNamespace>
+    <AssemblyName>CAPA_PRESENTACION</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frm02Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm02Usuarios.Designer.cs">
+      <DependentUpon>frm02Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm01MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm01MenuPrincipal.Designer.cs">
+      <DependentUpon>frm01MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm00Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm00Login.Designer.cs">
+      <DependentUpon>frm00Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm03Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm03Empleados.Designer.cs">
+      <DependentUpon>Frm03Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm04Estadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm04Estadisticas.Designer.cs">
+      <DependentUpon>frm04Estadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm05Pagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm05Pagos.Designer.cs">
+      <DependentUpon>frm05Pagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPasajeros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPasajeros.Designer.cs">
+      <DependentUpon>FrmPasajeros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRutas.Designer.cs">
+      <DependentUpon>FrmRutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTarjetasTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTarjetasTransporte.Designer.cs">
+      <DependentUpon>FrmTarjetasTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransportes.Designer.cs">
+      <DependentUpon>FrmTransportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm02Usuarios.resx">
+      <DependentUpon>frm02Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm01MenuPrincipal.resx">
+      <DependentUpon>frm01MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm00Login.resx">
+      <DependentUpon>frm00Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm03Empleados.resx">
+      <DependentUpon>Frm03Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm04Estadisticas.resx">
+      <DependentUpon>frm04Estadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm05Pagos.resx">
+      <DependentUpon>frm05Pagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPasajeros.resx">
+      <DependentUpon>FrmPasajeros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRutas.resx">
+      <DependentUpon>FrmRutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTarjetasTransporte.resx">
+      <DependentUpon>FrmTarjetasTransporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransportes.resx">
+      <DependentUpon>FrmTransportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CAPADATOS\CAPA_DATOS.csproj">
+      <Project>{b3556936-31e0-4b15-a9a3-bb772c9d56e0}</Project>
+      <Name>CAPA_DATOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CAPA_LOGICA\CAPA_LOGICA.csproj">
+      <Project>{da962317-7868-4b3f-af58-a1a3f0788de4}</Project>
+      <Name>CAPA_LOGICA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CAPA_SEGURIDAD\CAPA_SEGURIDAD.csproj">
+      <Project>{69f2e0ac-2ea4-443a-aedf-cddb31930255}</Project>
+      <Name>CAPA_SEGURIDAD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
