@@ -39,7 +39,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtTipoEmpleo = new System.Windows.Forms.TextBox();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtFechaCon = new System.Windows.Forms.TextBox();
@@ -50,7 +49,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtLicencia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,6 +57,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.cboxLicencia = new System.Windows.Forms.ComboBox();
+            this.cboxTipoEmpleo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudEmpleados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,6 +85,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.cboxTipoEmpleo);
+            this.groupBox1.Controls.Add(this.cboxLicencia);
             this.groupBox1.Controls.Add(this.cboxCodUsuario);
             this.groupBox1.Controls.Add(this.txtCodEmpleado);
             this.groupBox1.Controls.Add(this.label11);
@@ -94,7 +96,6 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtDireccion);
-            this.groupBox1.Controls.Add(this.txtTipoEmpleo);
             this.groupBox1.Controls.Add(this.txtSalario);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtFechaCon);
@@ -105,7 +106,6 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtBuscar);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtLicencia);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -132,6 +132,7 @@
             // 
             // txtCodEmpleado
             // 
+            this.txtCodEmpleado.Enabled = false;
             this.txtCodEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodEmpleado.Location = new System.Drawing.Point(211, 47);
             this.txtCodEmpleado.Margin = new System.Windows.Forms.Padding(4);
@@ -213,15 +214,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(174, 31);
             this.txtDireccion.TabIndex = 40;
-            // 
-            // txtTipoEmpleo
-            // 
-            this.txtTipoEmpleo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoEmpleo.Location = new System.Drawing.Point(211, 321);
-            this.txtTipoEmpleo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTipoEmpleo.Name = "txtTipoEmpleo";
-            this.txtTipoEmpleo.Size = new System.Drawing.Size(174, 31);
-            this.txtTipoEmpleo.TabIndex = 39;
             // 
             // txtSalario
             // 
@@ -331,15 +323,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 38);
             this.label5.TabIndex = 12;
-            // 
-            // txtLicencia
-            // 
-            this.txtLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLicencia.Location = new System.Drawing.Point(211, 163);
-            this.txtLicencia.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLicencia.Name = "txtLicencia";
-            this.txtLicencia.Size = new System.Drawing.Size(174, 31);
-            this.txtLicencia.TabIndex = 5;
             // 
             // label3
             // 
@@ -473,6 +456,32 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // cboxLicencia
+            // 
+            this.cboxLicencia.FormattingEnabled = true;
+            this.cboxLicencia.Items.AddRange(new object[] {
+            "A",
+            "B"});
+            this.cboxLicencia.Location = new System.Drawing.Point(211, 159);
+            this.cboxLicencia.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxLicencia.Name = "cboxLicencia";
+            this.cboxLicencia.Size = new System.Drawing.Size(174, 37);
+            this.cboxLicencia.TabIndex = 49;
+            // 
+            // cboxTipoEmpleo
+            // 
+            this.cboxTipoEmpleo.FormattingEnabled = true;
+            this.cboxTipoEmpleo.Items.AddRange(new object[] {
+            "Conductor",
+            "Ayudante",
+            "Administrativo"});
+            this.cboxTipoEmpleo.Location = new System.Drawing.Point(211, 316);
+            this.cboxTipoEmpleo.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxTipoEmpleo.Name = "cboxTipoEmpleo";
+            this.cboxTipoEmpleo.Size = new System.Drawing.Size(174, 37);
+            this.cboxTipoEmpleo.TabIndex = 50;
+            this.cboxTipoEmpleo.SelectedIndexChanged += new System.EventHandler(this.cboxTipoEmpleo_SelectedIndexChanged);
+            // 
             // Frm03Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -504,7 +513,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtLicencia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
@@ -519,12 +527,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtTipoEmpleo;
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtFechaCon;
         private System.Windows.Forms.TextBox txtCodEmpleado;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cboxCodUsuario;
+        private System.Windows.Forms.ComboBox cboxTipoEmpleo;
+        private System.Windows.Forms.ComboBox cboxLicencia;
     }
 }

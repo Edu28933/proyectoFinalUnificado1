@@ -92,5 +92,18 @@ namespace CAPADATOS
             return dtEmpleados;
         }
 
+        public decimal MtdObtenerSalario(string tipoEmpleado)
+        {
+            string spObtenerSalario = "usp_ObtenerSalario";
+            SqlCommand cmd = new SqlCommand(spObtenerSalario, cd_Conexion.MtdAbrirConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TipoEmpleado", tipoEmpleado);
+
+            object result = cmd.ExecuteScalar();
+            cd_Conexion.MtdCerrarConexion();
+
+            return result != null ? Convert.ToDecimal(result) : 0; // Devuelve 0 si no hay salario definido
+        }
+
     }
 }
