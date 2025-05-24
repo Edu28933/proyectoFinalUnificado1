@@ -14,7 +14,7 @@ namespace CAPA_SEGURIDAD
             public static string mtdValidacion(string nombre, string Contraseña)
             {
                 string Nombre = null;
-                string conexionString = "server=EDUARDO\\SQLEXPRESS; database=TransporteDB; integrated security=true";
+                string conexionString = "server=EDUARDO\\SQLEXPRESS; database=TransporteDB3; integrated security=true";
 
                 using (SqlConnection conexion = new SqlConnection(conexionString))
                 {

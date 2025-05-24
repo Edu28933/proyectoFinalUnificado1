@@ -38,13 +38,12 @@ namespace CAPA_DATOS
             cd_Conexion.MtdCerrarConexion();
         }
 
-        public void MtdActualizarUsuario(int CodigoUsuario, string Nombre, string Contraseña, string Estado)
+        public void MtdActualizarUsuario( string Nombre, string Contraseña, string Estado)
         {
-            string usp_actualizar = "usp_Usuarios_editar";
+            string usp_actualizar = "usp_Usuarios_editar3";
             SqlCommand cmdUspActualizar = new SqlCommand(usp_actualizar, cd_Conexion.MtdAbrirConexion());
             cmdUspActualizar.CommandType = CommandType.StoredProcedure;
 
-            cmdUspActualizar.Parameters.AddWithValue("@CodigoUsuario", CodigoUsuario);
             cmdUspActualizar.Parameters.AddWithValue("@Nombre", Nombre);
             cmdUspActualizar.Parameters.AddWithValue("@Contraseña", Contraseña); 
             cmdUspActualizar.Parameters.AddWithValue("@Estado", Estado);

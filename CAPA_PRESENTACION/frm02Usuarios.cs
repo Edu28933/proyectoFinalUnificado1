@@ -152,12 +152,9 @@ namespace CAPA_PRESENTACION
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                cd_02Usuarios cd_02Usuarios = new cd_02Usuarios();
+             cd_02Usuarios cd_02Usuarios = new cd_02Usuarios();
 
                 cd_02Usuarios.MtdActualizarUsuario(
-                    int.Parse(txtcodUsuario.Text),
                     txtUsuario.Text,
                     txtContraseña.Text,
                     cboxEstado.Text
@@ -167,15 +164,7 @@ namespace CAPA_PRESENTACION
                 mtdLimpieza();
                 MtdMostrarUsuarios();
 
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
 
         }
         //estabamos probando algo

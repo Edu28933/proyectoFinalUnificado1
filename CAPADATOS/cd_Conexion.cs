@@ -10,7 +10,7 @@ namespace CAPADATOS
 {
     public class cd_Conexion
     {
-        private SqlConnection db_conexion = new SqlConnection("Data Source=EDUARDO\\SQLEXPRESS;Initial Catalog=TransporteDB;Integrated Security=True;Encrypt=False");
+        private SqlConnection db_conexion = new SqlConnection("Data Source=EDUARDO\\SQLEXPRESS;Initial Catalog=TransporteDB3;Integrated Security=True;Encrypt=False");
 
         public SqlConnection MtdAbrirConexion()
         {
