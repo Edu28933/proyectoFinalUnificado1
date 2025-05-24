@@ -65,6 +65,29 @@ namespace CAPA_DATOS
             cd_Conexion.MtdCerrarConexion();
         }
 
+        public DataTable MtdBuscarUsuario(string buscarParametro)
+        {
+            
+            string usp_buscar = "usp_usuarios_buscar";
+
+            
+            SqlCommand cmdBuscarUsuario = new SqlCommand(usp_buscar, cd_Conexion.MtdAbrirConexion());
+            cmdBuscarUsuario.CommandType = CommandType.StoredProcedure;
+
+            
+            cmdBuscarUsuario.Parameters.AddWithValue("@Buscar", buscarParametro);
+
+            
+            SqlDataAdapter adapter = new SqlDataAdapter(cmdBuscarUsuario);
+            DataTable dtUsuarios = new DataTable();
+            adapter.Fill(dtUsuarios);
+
+            
+            cd_Conexion.MtdCerrarConexion();
+
+            return dtUsuarios;
+        }
+
 
     }
 

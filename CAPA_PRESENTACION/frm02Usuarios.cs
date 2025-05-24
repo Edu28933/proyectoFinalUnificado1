@@ -46,6 +46,39 @@ namespace CAPA_PRESENTACION
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                cd_02Usuarios cd_02Usuarios = new cd_02Usuarios();
+
+                string buscarUsuario = txtBuscar.Text.Trim();
+
+
+                if (string.IsNullOrEmpty(buscarUsuario))
+                {
+                    MessageBox.Show("Por favor ingrese un valor de búsqueda.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DataTable dtUsuarios = cd_02Usuarios.MtdBuscarUsuario(buscarUsuario);
+
+
+                if (dtUsuarios.Rows.Count > 0)
+                {
+                    dgviewCrudUsuarios.DataSource = dtUsuarios;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron usuarios con los datos ingresados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error de SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
