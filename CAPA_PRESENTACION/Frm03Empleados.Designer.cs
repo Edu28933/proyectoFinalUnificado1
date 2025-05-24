@@ -30,6 +30,9 @@
         {
             this.dgviewCrudEmpleados = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboxCodUsuario = new System.Windows.Forms.ComboBox();
+            this.txtCodEmpleado = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,9 +59,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.txtCodEmpleado = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cboxCodUsuario = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudEmpleados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -118,6 +118,37 @@
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Empleados";
+            // 
+            // cboxCodUsuario
+            // 
+            this.cboxCodUsuario.FormattingEnabled = true;
+            this.cboxCodUsuario.Location = new System.Drawing.Point(211, 82);
+            this.cboxCodUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxCodUsuario.Name = "cboxCodUsuario";
+            this.cboxCodUsuario.Size = new System.Drawing.Size(174, 37);
+            this.cboxCodUsuario.TabIndex = 48;
+            this.cboxCodUsuario.DropDown += new System.EventHandler(this.cboxCodUsuario_DropDown);
+            this.cboxCodUsuario.SelectedIndexChanged += new System.EventHandler(this.cboxCodUsuario_SelectedIndexChanged);
+            // 
+            // txtCodEmpleado
+            // 
+            this.txtCodEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodEmpleado.Location = new System.Drawing.Point(211, 47);
+            this.txtCodEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodEmpleado.Name = "txtCodEmpleado";
+            this.txtCodEmpleado.Size = new System.Drawing.Size(174, 31);
+            this.txtCodEmpleado.TabIndex = 47;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(7, 49);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(201, 29);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "Cod. Empleado:";
             // 
             // label10
             // 
@@ -279,6 +310,7 @@
             this.btnBuscar.TabIndex = 29;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -363,6 +395,7 @@
             this.btnEliminar.TabIndex = 28;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -400,6 +433,7 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSalir
             // 
@@ -437,37 +471,7 @@
             this.btnActualizar.TabIndex = 12;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // txtCodEmpleado
-            // 
-            this.txtCodEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodEmpleado.Location = new System.Drawing.Point(211, 47);
-            this.txtCodEmpleado.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodEmpleado.Name = "txtCodEmpleado";
-            this.txtCodEmpleado.Size = new System.Drawing.Size(174, 31);
-            this.txtCodEmpleado.TabIndex = 47;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(7, 49);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(201, 29);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "Cod. Empleado:";
-            // 
-            // cboxCodUsuario
-            // 
-            this.cboxCodUsuario.FormattingEnabled = true;
-            this.cboxCodUsuario.Location = new System.Drawing.Point(211, 82);
-            this.cboxCodUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.cboxCodUsuario.Name = "cboxCodUsuario";
-            this.cboxCodUsuario.Size = new System.Drawing.Size(174, 37);
-            this.cboxCodUsuario.TabIndex = 48;
-            this.cboxCodUsuario.DropDown += new System.EventHandler(this.cboxCodUsuario_DropDown);
-            this.cboxCodUsuario.SelectedIndexChanged += new System.EventHandler(this.cboxCodUsuario_SelectedIndexChanged);
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // Frm03Empleados
             // 

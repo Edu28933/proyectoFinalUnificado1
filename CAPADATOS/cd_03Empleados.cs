@@ -23,5 +23,74 @@ namespace CAPADATOS
             return dtMostrarEmpleados;
         }
 
+        public void MtdAgregarEmpleado(int CodigoUsuario, string Nombre, string Licencia, int Telefono, DateTime FechaContratacion, string Direccion, string Estado, string TipoEmpleado, decimal Salario)
+        {
+            string spCrear = "usp_Empleados_Crear";
+            SqlCommand cmdCrear = new SqlCommand(spCrear, cd_Conexion.MtdAbrirConexion());
+            cmdCrear.CommandType = CommandType.StoredProcedure;
+
+            cmdCrear.Parameters.AddWithValue("@CodigoUsuario", CodigoUsuario);
+            cmdCrear.Parameters.AddWithValue("@Nombre", Nombre);
+            cmdCrear.Parameters.AddWithValue("@Licencia", Licencia);
+            cmdCrear.Parameters.AddWithValue("@Telefono", Telefono);
+            cmdCrear.Parameters.AddWithValue("@FechaContratacion", FechaContratacion);
+            cmdCrear.Parameters.AddWithValue("@Direccion", Direccion);
+            cmdCrear.Parameters.AddWithValue("@Estado", Estado);
+            cmdCrear.Parameters.AddWithValue("@TipoEmpleado", TipoEmpleado);
+            cmdCrear.Parameters.AddWithValue("@Salario", Salario);
+
+            cmdCrear.ExecuteNonQuery();
+            cd_Conexion.MtdCerrarConexion();
+        }
+
+        public void MtdActualizarEmpleado(int CodigoEmpleado, int CodigoUsuario, string Nombre, string Licencia, int Telefono, DateTime FechaContratacion, string Direccion, string Estado, string TipoEmpleado, decimal Salario)
+        {
+            string spActualizar = "usp_Empleados_Editar";
+            SqlCommand cmdActualizar = new SqlCommand(spActualizar, cd_Conexion.MtdAbrirConexion());
+            cmdActualizar.CommandType = CommandType.StoredProcedure;
+
+            cmdActualizar.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado); // Se agrega este parámetro
+            cmdActualizar.Parameters.AddWithValue("@CodigoUsuario", CodigoUsuario);
+            cmdActualizar.Parameters.AddWithValue("@Nombre", Nombre);
+            cmdActualizar.Parameters.AddWithValue("@Licencia", Licencia);
+            cmdActualizar.Parameters.AddWithValue("@Telefono", Telefono);
+            cmdActualizar.Parameters.AddWithValue("@FechaContratacion", FechaContratacion);
+            cmdActualizar.Parameters.AddWithValue("@Direccion", Direccion);
+            cmdActualizar.Parameters.AddWithValue("@Estado", Estado);
+            cmdActualizar.Parameters.AddWithValue("@TipoEmpleado", TipoEmpleado);
+            cmdActualizar.Parameters.AddWithValue("@Salario", Salario);
+
+            cmdActualizar.ExecuteNonQuery();
+            cd_Conexion.MtdCerrarConexion();
+        }
+
+        public void MtdEliminarEmpleado(int CodigoEmpleado)
+        {
+            string spEliminar = "usp_Empleados_Eliminar";
+            SqlCommand cmdEliminar = new SqlCommand(spEliminar, cd_Conexion.MtdAbrirConexion());
+            cmdEliminar.CommandType = CommandType.StoredProcedure;
+
+            cmdEliminar.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
+            cmdEliminar.ExecuteNonQuery();
+
+            cd_Conexion.MtdCerrarConexion();
+        }
+
+        public DataTable MtdBuscarEmpleado(string buscarParametro)
+        {
+            string spBuscar = "usp_Empleados_Buscar";
+            SqlCommand cmdBuscar = new SqlCommand(spBuscar, cd_Conexion.MtdAbrirConexion());
+            cmdBuscar.CommandType = CommandType.StoredProcedure;
+
+            cmdBuscar.Parameters.AddWithValue("@Buscar", buscarParametro);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmdBuscar);
+            DataTable dtEmpleados = new DataTable();
+            adapter.Fill(dtEmpleados);
+
+            cd_Conexion.MtdCerrarConexion();
+            return dtEmpleados;
+        }
+
     }
 }

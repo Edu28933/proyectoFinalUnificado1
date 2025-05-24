@@ -25,7 +25,7 @@ namespace CAPA_LOGICA
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
 
-                    // Agregar columna combinada: "1 - Usuario1"
+                    // Agregar columna combinada
                     dt.Columns.Add("Display", typeof(string));
                     foreach (DataRow row in dt.Rows)
                     {
@@ -40,6 +40,7 @@ namespace CAPA_LOGICA
 
             return dt;
         }
+
 
     }
 }
