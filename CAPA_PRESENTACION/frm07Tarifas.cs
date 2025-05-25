@@ -16,5 +16,10 @@ namespace CAPA_PRESENTACION
         {
             InitializeComponent();
         }
+
+        private void dgviewCrudTarifas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

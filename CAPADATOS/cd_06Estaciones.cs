@@ -111,7 +111,7 @@ namespace CAPADATOS
 
                 using (SqlConnection con = conexion.MtdAbrirConexion())
                 {
-                    SqlCommand cmd = new SqlCommand("sp_ListarEstacionesActivas", con);
+                    SqlCommand cmd = new SqlCommand("sp_ListarRutasActivas", con);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
