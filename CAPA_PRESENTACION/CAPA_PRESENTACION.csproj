@@ -82,6 +82,30 @@
     <Compile Include="frm05Pagos.Designer.cs">
       <DependentUpon>frm05Pagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm06Estaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm06Estaciones.Designer.cs">
+      <DependentUpon>frm06Estaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm07Tarifas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm07Tarifas.Designer.cs">
+      <DependentUpon>frm07Tarifas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm08Incidentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm08Incidentes.Designer.cs">
+      <DependentUpon>frm08Incidentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm09Mantenimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm09Mantenimientos.Designer.cs">
+      <DependentUpon>frm09Mantenimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPasajeros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +149,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm05Pagos.resx">
       <DependentUpon>frm05Pagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm06Estaciones.resx">
+      <DependentUpon>frm06Estaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm07Tarifas.resx">
+      <DependentUpon>frm07Tarifas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm08Incidentes.resx">
+      <DependentUpon>frm08Incidentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm09Mantenimientos.resx">
+      <DependentUpon>frm09Mantenimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPasajeros.resx">
       <DependentUpon>FrmPasajeros.cs</DependentUpon>

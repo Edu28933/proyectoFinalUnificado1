@@ -47,6 +47,10 @@
     <Compile Include="cd_03Empleados.cs" />
     <Compile Include="cd_04Estadisticas.cs" />
     <Compile Include="cd_05Pagos.cs" />
+    <Compile Include="cd_06Estaciones.cs" />
+    <Compile Include="cd_07Tarifas.cs" />
+    <Compile Include="cd_08Insidentes.cs" />
+    <Compile Include="cd_09Mantenimientos.cs" />
     <Compile Include="cd_Conexion.cs" />
     <Compile Include="CD_Pasajeros.cs" />
     <Compile Include="CD_Rutas.cs" />
