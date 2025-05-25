@@ -30,6 +30,7 @@
         {
             this.dgvRutas = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboxCodigoTransporte = new System.Windows.Forms.ComboBox();
             this.txtOrigen = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDestino = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtCodigoRuta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodigoUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -80,6 +80,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.cboxCodigoTransporte);
             this.groupBox1.Controls.Add(this.txtOrigen);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtDestino);
@@ -90,7 +91,6 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtCodigoRuta);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtCodigoUsuario);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -110,6 +110,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Rutas";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cboxCodigoTransporte
+            // 
+            this.cboxCodigoTransporte.FormattingEnabled = true;
+            this.cboxCodigoTransporte.Location = new System.Drawing.Point(331, 134);
+            this.cboxCodigoTransporte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboxCodigoTransporte.Name = "cboxCodigoTransporte";
+            this.cboxCodigoTransporte.Size = new System.Drawing.Size(270, 41);
+            this.cboxCodigoTransporte.TabIndex = 45;
+            this.cboxCodigoTransporte.DropDown += new System.EventHandler(this.cboxCodigoTransporte_DropDown);
+            this.cboxCodigoTransporte.SelectedIndexChanged += new System.EventHandler(this.cboxCodigoTransporte_SelectedIndexChanged);
             // 
             // txtOrigen
             // 
@@ -194,6 +205,7 @@
             // 
             // txtCodigoRuta
             // 
+            this.txtCodigoRuta.Enabled = false;
             this.txtCodigoRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoRuta.Location = new System.Drawing.Point(9, 134);
             this.txtCodigoRuta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -212,15 +224,6 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "CodigoRuta:";
             // 
-            // txtCodigoUsuario
-            // 
-            this.txtCodigoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoUsuario.Location = new System.Drawing.Point(320, 134);
-            this.txtCodigoUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCodigoUsuario.Name = "txtCodigoUsuario";
-            this.txtCodigoUsuario.Size = new System.Drawing.Size(286, 35);
-            this.txtCodigoUsuario.TabIndex = 32;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -228,9 +231,9 @@
             this.label4.Location = new System.Drawing.Point(328, 96);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 33);
+            this.label4.Size = new System.Drawing.Size(273, 33);
             this.label4.TabIndex = 31;
-            this.label4.Text = "CodigoUsuario:";
+            this.label4.Text = "CodigoTransporte:";
             // 
             // cboxEstado
             // 
@@ -261,6 +264,7 @@
             this.btnBuscar.TabIndex = 29;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -456,7 +460,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCodigoRuta;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCodigoUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Button btnBuscar;
@@ -471,5 +474,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.ComboBox cboxCodigoTransporte;
     }
 }
