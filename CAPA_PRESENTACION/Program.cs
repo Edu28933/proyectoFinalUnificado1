@@ -16,7 +16,7 @@ namespace CAPA_PRESENTACION
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmRutas());
+            Application.Run(new frm00Login());
         }
     }
 }
