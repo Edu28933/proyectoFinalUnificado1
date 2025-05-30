@@ -12,7 +12,7 @@ namespace CAPADATOS
     {
         cd_Conexion cd_Conexion = new cd_Conexion();
 
-        // Mostrar todas las tarifas
+        // Mostrar todas las tarifas hola
         public DataTable MtdMostrarTarifas()
         {
             string consulta = "usp_tarifas_mostrar";
