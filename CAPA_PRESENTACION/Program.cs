@@ -20,7 +20,7 @@ namespace CAPA_PRESENTACION
 
 
 
-            Application.Run(new frm00Login());
+            Application.Run(new frm08Incidentes());
 
         }
     }
