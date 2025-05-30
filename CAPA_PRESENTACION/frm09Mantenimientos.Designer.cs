@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboxCodigoTransporte = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,7 +39,6 @@
             this.txtCosto = new System.Windows.Forms.TextBox();
             this.txtcodMantenimiento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtcodTransporte = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.cboxTipoServicio = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudMantenimientos)).BeginInit();
             this.panel1.SuspendLayout();
@@ -61,6 +63,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.cboxTipoServicio);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.cboxCodigoTransporte);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -69,7 +74,6 @@
             this.groupBox1.Controls.Add(this.txtCosto);
             this.groupBox1.Controls.Add(this.txtcodMantenimiento);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtcodTransporte);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -88,6 +92,27 @@
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Mantenimientos";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(13, 301);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(169, 29);
+            this.label9.TabIndex = 45;
+            this.label9.Text = "TipoServicio:";
+            // 
+            // cboxCodigoTransporte
+            // 
+            this.cboxCodigoTransporte.FormattingEnabled = true;
+            this.cboxCodigoTransporte.Location = new System.Drawing.Point(256, 94);
+            this.cboxCodigoTransporte.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxCodigoTransporte.Name = "cboxCodigoTransporte";
+            this.cboxCodigoTransporte.Size = new System.Drawing.Size(131, 37);
+            this.cboxCodigoTransporte.TabIndex = 44;
+            this.cboxCodigoTransporte.SelectedIndexChanged += new System.EventHandler(this.cboxCodigoTransporte_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -151,6 +176,7 @@
             // 
             // txtcodMantenimiento
             // 
+            this.txtcodMantenimiento.Enabled = false;
             this.txtcodMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodMantenimiento.Location = new System.Drawing.Point(260, 59);
             this.txtcodMantenimiento.Margin = new System.Windows.Forms.Padding(4);
@@ -169,15 +195,6 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Cod. Mantenimiento:";
             // 
-            // txtcodTransporte
-            // 
-            this.txtcodTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcodTransporte.Location = new System.Drawing.Point(260, 98);
-            this.txtcodTransporte.Margin = new System.Windows.Forms.Padding(4);
-            this.txtcodTransporte.Name = "txtcodTransporte";
-            this.txtcodTransporte.Size = new System.Drawing.Size(125, 31);
-            this.txtcodTransporte.TabIndex = 32;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -195,7 +212,7 @@
             this.cboxEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstado.Location = new System.Drawing.Point(181, 304);
+            this.cboxEstado.Location = new System.Drawing.Point(166, 351);
             this.cboxEstado.Margin = new System.Windows.Forms.Padding(4);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(206, 37);
@@ -211,19 +228,20 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(12, 394);
+            this.btnBuscar.Location = new System.Drawing.Point(8, 424);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(130, 44);
             this.btnBuscar.TabIndex = 29;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
             // txtBuscar
             // 
             this.txtBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(181, 402);
+            this.txtBuscar.Location = new System.Drawing.Point(179, 438);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(192, 30);
@@ -252,7 +270,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 312);
+            this.label3.Location = new System.Drawing.Point(13, 351);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 29);
@@ -284,6 +302,7 @@
             this.dgviewCrudMantenimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgviewCrudMantenimientos.Size = new System.Drawing.Size(931, 525);
             this.dgviewCrudMantenimientos.TabIndex = 36;
+            this.dgviewCrudMantenimientos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewCrudMantenimientos_CellClick);
             // 
             // panel1
             // 
@@ -317,6 +336,7 @@
             this.btnEliminar.TabIndex = 28;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -335,6 +355,7 @@
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAgregar
             // 
@@ -353,6 +374,7 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSalir
             // 
@@ -371,6 +393,7 @@
             this.btnSalir.TabIndex = 26;
             this.btnSalir.Text = "Cerrar";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnActualizar
             // 
@@ -389,6 +412,20 @@
             this.btnActualizar.TabIndex = 12;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // cboxTipoServicio
+            // 
+            this.cboxTipoServicio.FormattingEnabled = true;
+            this.cboxTipoServicio.Items.AddRange(new object[] {
+            "Mantenimiento Preventivo ",
+            "Mantenimiento Correctivo ",
+            "Mantenimiento Predictivo "});
+            this.cboxTipoServicio.Location = new System.Drawing.Point(181, 293);
+            this.cboxTipoServicio.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxTipoServicio.Name = "cboxTipoServicio";
+            this.cboxTipoServicio.Size = new System.Drawing.Size(206, 37);
+            this.cboxTipoServicio.TabIndex = 46;
             // 
             // frm09Mantenimientos
             // 
@@ -400,6 +437,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm09Mantenimientos";
             this.Text = "frm09Mantenimientos";
+            this.Load += new System.EventHandler(this.frm09Mantenimientos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudMantenimientos)).EndInit();
@@ -419,7 +457,6 @@
         private System.Windows.Forms.TextBox txtCosto;
         private System.Windows.Forms.TextBox txtcodMantenimiento;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtcodTransporte;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Button btnBuscar;
@@ -435,5 +472,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.ComboBox cboxCodigoTransporte;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboxTipoServicio;
     }
 }

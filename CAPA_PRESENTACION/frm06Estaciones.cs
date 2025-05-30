@@ -28,7 +28,7 @@ namespace CAPA_PRESENTACION
 
            
 
-            DataTable dtMostrarEstaciones = cd_06Estaciones.MtMostrarEstaciones();
+            DataTable dtMostrarEstaciones = cd_06Estaciones.MtdMostrarEstaciones();
             dgviewCrudEstaciones.DataSource = dtMostrarEstaciones ;
         }
         private void label6_Click(object sender, EventArgs e)
@@ -152,8 +152,8 @@ namespace CAPA_PRESENTACION
               txtNombre.Text = dgviewCrudEstaciones.SelectedCells[2].Value.ToString();
               txtUbicacion.Text = dgviewCrudEstaciones.SelectedCells[3].Value.ToString(); 
               txtSecuencia.Text = dgviewCrudEstaciones.SelectedCells[4].Value.ToString(); 
-              txtTiemEspera.Text = dgviewCrudEstaciones.SelectedCells[5].Value.ToString();
-              cboxEstado.Text = dgviewCrudEstaciones.SelectedCells[6].Value.ToString();
+              txtTiemEspera.Text = dgviewCrudEstaciones.SelectedCells[5].Value.ToString(); 
+              cboxEstado.Text = dgviewCrudEstaciones.SelectedCells[6].Value.ToString();                      
 
 
 
@@ -240,10 +240,15 @@ namespace CAPA_PRESENTACION
                 MtdMostrarEstaciones();
                 btnLimpiar_Click(sender, e);
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error en la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error inesperado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void LlenarComboEstacion()
@@ -253,7 +258,7 @@ namespace CAPA_PRESENTACION
 
             cboxRuta.DataSource = null; // Limpia
             cboxRuta.DisplayMember = "Display";       // Muestra: "1 - Usuario1"
-            cboxRuta.ValueMember = "CodigoUsuario";   // Internamente: 1
+            cboxRuta.ValueMember = "CodigoTransporte";   // Internamente: 1
             cboxRuta.DataSource = dt;
                 cboxRuta.SelectedIndex = -1; // Que inicie vacío
         }
@@ -270,6 +275,16 @@ namespace CAPA_PRESENTACION
         private void cboxRuta_DropDown(object sender, EventArgs e)
         {
             LlenarComboEstacion(); 
+        }
+
+        private void cboxRuta_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgviewCrudEstaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

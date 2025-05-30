@@ -11,12 +11,17 @@ namespace CAPA_PRESENTACION
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        [STAThread]
+      
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm06Estaciones());
+
+
+
+
+            Application.Run(new frm00Login());
+
         }
     }
 }
