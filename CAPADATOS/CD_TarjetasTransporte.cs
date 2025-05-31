@@ -76,5 +76,60 @@ namespace CAPADATOS
 
         }
 
+
+        public DataTable MtdBuscarTarjetastransporte(string buscarParametro)
+        {
+
+            string usp_buscar = "usp_Tarjetastransporte_buscar";
+
+
+            SqlCommand cmdBuscarTarjetastransporte = new SqlCommand(usp_buscar, db_conexion.MtdAbrirConexion());
+            cmdBuscarTarjetastransporte.CommandType = CommandType.StoredProcedure;
+
+
+            cmdBuscarTarjetastransporte.Parameters.AddWithValue("@Buscar", buscarParametro);
+
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmdBuscarTarjetastransporte);
+            DataTable dtTarjetastransporte = new DataTable();
+            adapter.Fill(dtTarjetastransporte);
+
+
+            db_conexion.MtdCerrarConexion();
+
+            return dtTarjetastransporte;
+        }
+
+        public DataTable ObtenerPasajerosActivos()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cd_Conexion conexion = new cd_Conexion();
+
+                using (SqlConnection con = conexion.MtdAbrirConexion())
+                {
+                    SqlCommand cmd = new SqlCommand("usp_ListarPasajerosActivos", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+
+                    // Agregar columna combinada
+                    dt.Columns.Add("Display", typeof(string));
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        row["Display"] = row["CodigoPasajero"].ToString() + " - " + row["Nombre"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los pasajeros activos: " + ex.Message);
+            }
+
+            return dt;
+        }
     }
 }

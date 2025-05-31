@@ -52,6 +52,7 @@
     <Compile Include="cd_08Insidentes.cs" />
     <Compile Include="cd_09Mantenimientos.cs" />
     <Compile Include="cd_Conexion.cs" />
+    <Compile Include="CD_Horarios.cs" />
     <Compile Include="CD_Pasajeros.cs" />
     <Compile Include="CD_Rutas.cs" />
     <Compile Include="CD_TarjetasTransporte.cs" />

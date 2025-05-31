@@ -30,15 +30,15 @@
         {
             this.dgvTarjetasTransporte = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboxTipoTarjeta = new System.Windows.Forms.ComboBox();
+            this.cboxCodigoPasajero = new System.Windows.Forms.ComboBox();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMoneda = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTipoTarjeta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCodigoTarjeta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodigoPasajero = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -77,15 +77,15 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.cboxTipoTarjeta);
+            this.groupBox1.Controls.Add(this.cboxCodigoPasajero);
             this.groupBox1.Controls.Add(this.txtSaldo);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtMoneda);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtTipoTarjeta);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtCodigoTarjeta);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtCodigoPasajero);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -104,6 +104,32 @@
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Tarjetas Transporte";
+            // 
+            // cboxTipoTarjeta
+            // 
+            this.cboxTipoTarjeta.FormattingEnabled = true;
+            this.cboxTipoTarjeta.Items.AddRange(new object[] {
+            "Normal",
+            "Estudiante",
+            "Frecuente"});
+            this.cboxTipoTarjeta.Location = new System.Drawing.Point(400, 238);
+            this.cboxTipoTarjeta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboxTipoTarjeta.Name = "cboxTipoTarjeta";
+            this.cboxTipoTarjeta.Size = new System.Drawing.Size(270, 41);
+            this.cboxTipoTarjeta.TabIndex = 46;
+            // 
+            // cboxCodigoPasajero
+            // 
+            this.cboxCodigoPasajero.FormattingEnabled = true;
+            this.cboxCodigoPasajero.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxCodigoPasajero.Location = new System.Drawing.Point(397, 135);
+            this.cboxCodigoPasajero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboxCodigoPasajero.Name = "cboxCodigoPasajero";
+            this.cboxCodigoPasajero.Size = new System.Drawing.Size(270, 41);
+            this.cboxCodigoPasajero.TabIndex = 45;
+            this.cboxCodigoPasajero.DropDown += new System.EventHandler(this.cboxCodigoPasajero_DropDown);
             // 
             // txtSaldo
             // 
@@ -141,18 +167,9 @@
             this.label6.Location = new System.Drawing.Point(50, 204);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 33);
+            this.label6.Size = new System.Drawing.Size(134, 33);
             this.label6.TabIndex = 41;
-            this.label6.Text = "Modelo:";
-            // 
-            // txtTipoTarjeta
-            // 
-            this.txtTipoTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoTarjeta.Location = new System.Drawing.Point(381, 244);
-            this.txtTipoTarjeta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTipoTarjeta.Name = "txtTipoTarjeta";
-            this.txtTipoTarjeta.Size = new System.Drawing.Size(286, 35);
-            this.txtTipoTarjeta.TabIndex = 40;
+            this.label6.Text = "Moneda:";
             // 
             // label7
             // 
@@ -184,15 +201,6 @@
             this.label1.Size = new System.Drawing.Size(220, 33);
             this.label1.TabIndex = 33;
             this.label1.Text = "CodigoTarjeta:";
-            // 
-            // txtCodigoPasajero
-            // 
-            this.txtCodigoPasajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoPasajero.Location = new System.Drawing.Point(383, 135);
-            this.txtCodigoPasajero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCodigoPasajero.Name = "txtCodigoPasajero";
-            this.txtCodigoPasajero.Size = new System.Drawing.Size(286, 35);
-            this.txtCodigoPasajero.TabIndex = 32;
             // 
             // label4
             // 
@@ -234,6 +242,7 @@
             this.btnBuscar.TabIndex = 29;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -376,6 +385,7 @@
             this.btnSalir.TabIndex = 26;
             this.btnSalir.Text = "Cerrar";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnActualizar
             // 
@@ -423,11 +433,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMoneda;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTipoTarjeta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCodigoTarjeta;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCodigoPasajero;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Button btnBuscar;
@@ -442,5 +450,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.ComboBox cboxCodigoPasajero;
+        private System.Windows.Forms.ComboBox cboxTipoTarjeta;
     }
 }

@@ -54,7 +54,7 @@ namespace CAPA_PRESENTACION
                 // Llamada a la clase de datos
 
                 cD_Rutas.MtdAgregarRutas(CodigoTransporte, Nombre, Origen, Destino, Distancia, TipoRuta, Estado);
-                MessageBox.Show("Ruta actualizado con éxito.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ruta agregada con éxito.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MtdMostrarRutas();
                 btnLimpiar_Click(sender, e);
 
@@ -91,7 +91,9 @@ namespace CAPA_PRESENTACION
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+
                 if (string.IsNullOrEmpty(txtCodigoRuta.Text))
                 {
                     MessageBox.Show("Seleccione una ruta para actualizar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -131,7 +133,15 @@ namespace CAPA_PRESENTACION
                 MessageBox.Show("Ruta actualizado con éxito.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MtdMostrarRutas();
                 btnLimpiar_Click(sender, e);
-            
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error en la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
 
         }
@@ -260,5 +270,9 @@ namespace CAPA_PRESENTACION
             }
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

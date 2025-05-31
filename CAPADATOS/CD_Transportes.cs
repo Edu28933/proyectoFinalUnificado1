@@ -23,7 +23,7 @@ namespace CAPADATOS
             return dtMostrarTransportes;
         }
 
-        public void MtdAgregarTransportes(int CodigoEmpleado, string Placa, string Marca, string Modelo, DateTime Año, decimal Capacidad, string TipoTransporte, string Estado)
+        public void MtdAgregarTransportes(int CodigoEmpleado, string Placa, string Marca, string Modelo, int Año, decimal Capacidad, string TipoTransporte, string Estado)
         {
             string Usp_Crear = "usp_transportes_crear"; // CAMBIAR USP
             SqlCommand cmd_InsertarTransportes = new SqlCommand(Usp_Crear, db_conexion.MtdAbrirConexion());
@@ -45,7 +45,7 @@ namespace CAPADATOS
 
         }
 
-        public void MtdActualizarTransportes(int CodigoTransporte, int CodigoEmpleado, string Placa, string Marca, string Modelo, DateTime Año, decimal Capacidad, string TipoTransporte, string Estado)
+        public void MtdActualizarTransportes(int CodigoTransporte, int CodigoEmpleado, string Placa, string Marca, string Modelo, int Año, decimal Capacidad, string TipoTransporte, string Estado)
 
         {
             string usp_actualizar = "usp_transportes_actualizar";  //CAMBIAR USP
@@ -79,5 +79,62 @@ namespace CAPADATOS
 
 
         }
+
+
+        public DataTable MtdBuscarTransportes(string buscarParametro)
+        {
+
+            string usp_buscar = "usp_Transportes_buscar";
+
+
+            SqlCommand cmdBuscarTransportes = new SqlCommand(usp_buscar, db_conexion.MtdAbrirConexion());
+            cmdBuscarTransportes.CommandType = CommandType.StoredProcedure;
+
+
+            cmdBuscarTransportes.Parameters.AddWithValue("@Buscar", buscarParametro);
+
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmdBuscarTransportes);
+            DataTable dtTransportes = new DataTable();
+            adapter.Fill(dtTransportes);
+
+
+            db_conexion.MtdCerrarConexion();
+
+            return dtTransportes;
+        }
+
+        public DataTable ObtenerEmpleadosActivos()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cd_Conexion conexion = new cd_Conexion();
+
+                using (SqlConnection con = conexion.MtdAbrirConexion())
+                {
+                    SqlCommand cmd = new SqlCommand("usp_ListarEmpleadosActivos", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+
+                    // Agregar columna combinada
+                    dt.Columns.Add("Display", typeof(string));
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        row["Display"] = row["CodigoEmpleado"].ToString() + " - " + row["Nombre"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los empleados activos: " + ex.Message);
+            }
+
+            return dt;
+        }
+
     }
 }

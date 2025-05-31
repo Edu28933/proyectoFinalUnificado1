@@ -1,6 +1,6 @@
 ﻿namespace CAPA_PRESENTACION
 {
-    partial class FrmTransportes
+    partial class FrmHorarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvTransportes = new System.Windows.Forms.DataGridView();
+            this.dgvHorarios = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTipoTransporte = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.cboxCodigoEstacion = new System.Windows.Forms.ComboBox();
+            this.txtHoraLlegada = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.txtFechaInicio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtAño = new System.Windows.Forms.TextBox();
+            this.txtFechaFin = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtCapacidad = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtCodigoTransporte = new System.Windows.Forms.TextBox();
+            this.txtCodigoHorario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPlaca = new System.Windows.Forms.TextBox();
+            this.txtHoraSalida = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,50 +53,45 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.cboxCodigoEmpleado = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTransportes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvTransportes
+            // dgvHorarios
             // 
-            this.dgvTransportes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvTransportes.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.dgvTransportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransportes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTransportes.Location = new System.Drawing.Point(0, 291);
-            this.dgvTransportes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvTransportes.Name = "dgvTransportes";
-            this.dgvTransportes.ReadOnly = true;
-            this.dgvTransportes.RowHeadersWidth = 51;
-            this.dgvTransportes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransportes.Size = new System.Drawing.Size(1668, 543);
-            this.dgvTransportes.TabIndex = 38;
-            this.dgvTransportes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransportes_CellClick);
+            this.dgvHorarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvHorarios.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dgvHorarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHorarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHorarios.Location = new System.Drawing.Point(0, 291);
+            this.dgvHorarios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvHorarios.Name = "dgvHorarios";
+            this.dgvHorarios.ReadOnly = true;
+            this.dgvHorarios.RowHeadersWidth = 51;
+            this.dgvHorarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHorarios.Size = new System.Drawing.Size(1668, 543);
+            this.dgvHorarios.TabIndex = 38;
+            this.dgvHorarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHorarios_CellClick);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox1.Controls.Add(this.cboxCodigoEmpleado);
-            this.groupBox1.Controls.Add(this.txtTipoTransporte);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtMarca);
+            this.groupBox1.Controls.Add(this.cboxCodigoEstacion);
+            this.groupBox1.Controls.Add(this.txtHoraLlegada);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtModelo);
+            this.groupBox1.Controls.Add(this.txtFechaInicio);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtAño);
+            this.groupBox1.Controls.Add(this.txtFechaFin);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtCapacidad);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtCodigoTransporte);
+            this.groupBox1.Controls.Add(this.txtCodigoHorario);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtBuscar);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtPlaca);
+            this.groupBox1.Controls.Add(this.txtHoraSalida);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -111,139 +103,111 @@
             this.groupBox1.Size = new System.Drawing.Size(1668, 291);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Transportes";
+            this.groupBox1.Text = "Datos Horarios";
             // 
-            // txtTipoTransporte
+            // cboxCodigoEstacion
             // 
-            this.txtTipoTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoTransporte.Location = new System.Drawing.Point(629, 226);
-            this.txtTipoTransporte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTipoTransporte.Name = "txtTipoTransporte";
-            this.txtTipoTransporte.Size = new System.Drawing.Size(286, 35);
-            this.txtTipoTransporte.TabIndex = 46;
+            this.cboxCodigoEstacion.FormattingEnabled = true;
+            this.cboxCodigoEstacion.Location = new System.Drawing.Point(334, 134);
+            this.cboxCodigoEstacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboxCodigoEstacion.Name = "cboxCodigoEstacion";
+            this.cboxCodigoEstacion.Size = new System.Drawing.Size(270, 41);
+            this.cboxCodigoEstacion.TabIndex = 45;
+            this.cboxCodigoEstacion.DropDown += new System.EventHandler(this.cboxCodigoEstacion_DropDown);
+            this.cboxCodigoEstacion.SelectedIndexChanged += new System.EventHandler(this.cboxCodigoEstacion_SelectedIndexChanged);
             // 
-            // label10
+            // txtHoraLlegada
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(656, 186);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(236, 33);
-            this.label10.TabIndex = 45;
-            this.label10.Text = "TipoTransporte:";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(922, 134);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(286, 35);
-            this.txtMarca.TabIndex = 44;
+            this.txtHoraLlegada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraLlegada.Location = new System.Drawing.Point(948, 140);
+            this.txtHoraLlegada.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtHoraLlegada.Name = "txtHoraLlegada";
+            this.txtHoraLlegada.Size = new System.Drawing.Size(286, 35);
+            this.txtHoraLlegada.TabIndex = 44;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(984, 94);
+            this.label8.Location = new System.Drawing.Point(970, 96);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 33);
+            this.label8.Size = new System.Drawing.Size(201, 33);
             this.label8.TabIndex = 43;
-            this.label8.Text = "Marca:";
+            this.label8.Text = "HoraLlegada:";
             // 
-            // txtModelo
+            // txtFechaInicio
             // 
-            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelo.Location = new System.Drawing.Point(1232, 134);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(286, 35);
-            this.txtModelo.TabIndex = 42;
+            this.txtFechaInicio.AcceptsReturn = true;
+            this.txtFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaInicio.Location = new System.Drawing.Point(86, 226);
+            this.txtFechaInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFechaInicio.Name = "txtFechaInicio";
+            this.txtFechaInicio.Size = new System.Drawing.Size(286, 35);
+            this.txtFechaInicio.TabIndex = 42;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1263, 94);
+            this.label6.Location = new System.Drawing.Point(131, 188);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 33);
+            this.label6.Size = new System.Drawing.Size(185, 33);
             this.label6.TabIndex = 41;
-            this.label6.Text = "Modelo:";
+            this.label6.Text = "FechaInicio:";
             // 
-            // txtAño
+            // txtFechaFin
             // 
-            this.txtAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAño.Location = new System.Drawing.Point(6, 228);
-            this.txtAño.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAño.Name = "txtAño";
-            this.txtAño.Size = new System.Drawing.Size(286, 35);
-            this.txtAño.TabIndex = 40;
+            this.txtFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaFin.Location = new System.Drawing.Point(428, 230);
+            this.txtFechaFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFechaFin.Name = "txtFechaFin";
+            this.txtFechaFin.Size = new System.Drawing.Size(286, 35);
+            this.txtFechaFin.TabIndex = 40;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(76, 188);
+            this.label7.Location = new System.Drawing.Point(498, 190);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 33);
+            this.label7.Size = new System.Drawing.Size(154, 33);
             this.label7.TabIndex = 39;
-            this.label7.Text = "Año:";
+            this.label7.Text = "FechaFin:";
             // 
-            // txtCapacidad
+            // txtCodigoHorario
             // 
-            this.txtCapacidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapacidad.Location = new System.Drawing.Point(318, 228);
-            this.txtCapacidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCapacidad.Name = "txtCapacidad";
-            this.txtCapacidad.Size = new System.Drawing.Size(286, 35);
-            this.txtCapacidad.TabIndex = 37;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(380, 188);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(172, 33);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Capacidad:";
-            // 
-            // txtCodigoTransporte
-            // 
-            this.txtCodigoTransporte.Enabled = false;
-            this.txtCodigoTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoTransporte.Location = new System.Drawing.Point(9, 134);
-            this.txtCodigoTransporte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCodigoTransporte.Name = "txtCodigoTransporte";
-            this.txtCodigoTransporte.Size = new System.Drawing.Size(286, 35);
-            this.txtCodigoTransporte.TabIndex = 34;
+            this.txtCodigoHorario.Enabled = false;
+            this.txtCodigoHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoHorario.Location = new System.Drawing.Point(9, 134);
+            this.txtCodigoHorario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCodigoHorario.Name = "txtCodigoHorario";
+            this.txtCodigoHorario.Size = new System.Drawing.Size(286, 35);
+            this.txtCodigoHorario.TabIndex = 34;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 94);
+            this.label1.Location = new System.Drawing.Point(22, 94);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 33);
+            this.label1.Size = new System.Drawing.Size(225, 33);
             this.label1.TabIndex = 33;
-            this.label1.Text = "CodigoTransporte:";
+            this.label1.Text = "CodigoHorario:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(330, 94);
+            this.label4.Location = new System.Drawing.Point(328, 96);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(261, 33);
+            this.label4.Size = new System.Drawing.Size(242, 33);
             this.label4.TabIndex = 31;
-            this.label4.Text = "CodigoEmpleado:";
+            this.label4.Text = "CodigoEstacion:";
             // 
             // cboxEstado
             // 
@@ -251,7 +215,7 @@
             this.cboxEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstado.Location = new System.Drawing.Point(938, 222);
+            this.cboxEstado.Location = new System.Drawing.Point(738, 226);
             this.cboxEstado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(270, 41);
@@ -293,24 +257,24 @@
             this.label5.Location = new System.Drawing.Point(560, 25);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(332, 46);
+            this.label5.Size = new System.Drawing.Size(241, 46);
             this.label5.TabIndex = 12;
-            this.label5.Text = "TRANSPORTES";
+            this.label5.Text = "HORARIOS";
             // 
-            // txtPlaca
+            // txtHoraSalida
             // 
-            this.txtPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca.Location = new System.Drawing.Point(616, 134);
-            this.txtPlaca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(286, 35);
-            this.txtPlaca.TabIndex = 5;
+            this.txtHoraSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraSalida.Location = new System.Drawing.Point(636, 138);
+            this.txtHoraSalida.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtHoraSalida.Name = "txtHoraSalida";
+            this.txtHoraSalida.Size = new System.Drawing.Size(286, 35);
+            this.txtHoraSalida.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1028, 186);
+            this.label3.Location = new System.Drawing.Point(802, 190);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 33);
@@ -321,12 +285,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(678, 94);
+            this.label2.Location = new System.Drawing.Point(640, 94);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 33);
+            this.label2.Size = new System.Drawing.Size(178, 33);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Placa:";
+            this.label2.Text = "HoraSalida:";
             // 
             // panel1
             // 
@@ -438,28 +402,18 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // cboxCodigoEmpleado
-            // 
-            this.cboxCodigoEmpleado.FormattingEnabled = true;
-            this.cboxCodigoEmpleado.Location = new System.Drawing.Point(321, 134);
-            this.cboxCodigoEmpleado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboxCodigoEmpleado.Name = "cboxCodigoEmpleado";
-            this.cboxCodigoEmpleado.Size = new System.Drawing.Size(270, 41);
-            this.cboxCodigoEmpleado.TabIndex = 47;
-            this.cboxCodigoEmpleado.DropDown += new System.EventHandler(this.cboxCodigoEmpleado_DropDown);
-            // 
-            // FrmTransportes
+            // FrmHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1668, 922);
-            this.Controls.Add(this.dgvTransportes);
+            this.Controls.Add(this.dgvHorarios);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmTransportes";
-            this.Text = "FrmTransportes";
-            this.Load += new System.EventHandler(this.FrmTransportes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTransportes)).EndInit();
+            this.Name = "FrmHorarios";
+            this.Text = "FrmHorarios";
+            this.Load += new System.EventHandler(this.FrmHorarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -469,26 +423,23 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvTransportes;
+        private System.Windows.Forms.DataGridView dgvHorarios;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTipoTransporte;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.ComboBox cboxCodigoEstacion;
+        private System.Windows.Forms.TextBox txtHoraLlegada;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtModelo;
+        private System.Windows.Forms.TextBox txtFechaInicio;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAño;
+        private System.Windows.Forms.TextBox txtFechaFin;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtCapacidad;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCodigoTransporte;
+        private System.Windows.Forms.TextBox txtCodigoHorario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPlaca;
+        private System.Windows.Forms.TextBox txtHoraSalida;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
@@ -497,6 +448,5 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.ComboBox cboxCodigoEmpleado;
     }
 }
