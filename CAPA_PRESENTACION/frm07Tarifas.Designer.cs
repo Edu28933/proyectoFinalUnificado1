@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboxRuta = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,16 +46,15 @@
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgviewCrudEstaciones = new System.Windows.Forms.DataGridView();
+            this.dgviewCrudTarifas = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.cboxRuta = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudEstaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudTarifas)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,20 @@
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Tarifa";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cboxRuta
+            // 
+            this.cboxRuta.FormattingEnabled = true;
+            this.cboxRuta.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxRuta.Location = new System.Drawing.Point(179, 92);
+            this.cboxRuta.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxRuta.Name = "cboxRuta";
+            this.cboxRuta.Size = new System.Drawing.Size(194, 37);
+            this.cboxRuta.TabIndex = 47;
+            this.cboxRuta.SelectedIndexChanged += new System.EventHandler(this.cboxRuta_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -151,6 +165,7 @@
             // 
             // txtcodTarifa
             // 
+            this.txtcodTarifa.Enabled = false;
             this.txtcodTarifa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodTarifa.Location = new System.Drawing.Point(179, 59);
             this.txtcodTarifa.Margin = new System.Windows.Forms.Padding(4);
@@ -209,6 +224,7 @@
             this.btnBuscar.TabIndex = 29;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -261,20 +277,21 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Monto:";
             // 
-            // dgviewCrudEstaciones
+            // dgviewCrudTarifas
             // 
-            this.dgviewCrudEstaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgviewCrudEstaciones.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.dgviewCrudEstaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgviewCrudEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgviewCrudEstaciones.Location = new System.Drawing.Point(404, 0);
-            this.dgviewCrudEstaciones.Margin = new System.Windows.Forms.Padding(4);
-            this.dgviewCrudEstaciones.Name = "dgviewCrudEstaciones";
-            this.dgviewCrudEstaciones.ReadOnly = true;
-            this.dgviewCrudEstaciones.RowHeadersWidth = 51;
-            this.dgviewCrudEstaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgviewCrudEstaciones.Size = new System.Drawing.Size(967, 544);
-            this.dgviewCrudEstaciones.TabIndex = 37;
+            this.dgviewCrudTarifas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgviewCrudTarifas.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dgviewCrudTarifas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgviewCrudTarifas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgviewCrudTarifas.Location = new System.Drawing.Point(404, 0);
+            this.dgviewCrudTarifas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgviewCrudTarifas.Name = "dgviewCrudTarifas";
+            this.dgviewCrudTarifas.ReadOnly = true;
+            this.dgviewCrudTarifas.RowHeadersWidth = 51;
+            this.dgviewCrudTarifas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgviewCrudTarifas.Size = new System.Drawing.Size(967, 544);
+            this.dgviewCrudTarifas.TabIndex = 37;
+            this.dgviewCrudTarifas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewCrudTarifas_CellClick);
             // 
             // panel1
             // 
@@ -308,6 +325,7 @@
             this.btnEliminar.TabIndex = 28;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -326,6 +344,7 @@
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAgregar
             // 
@@ -344,6 +363,7 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSalir
             // 
@@ -362,6 +382,7 @@
             this.btnSalir.TabIndex = 26;
             this.btnSalir.Text = "Cerrar";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnActualizar
             // 
@@ -380,32 +401,22 @@
             this.btnActualizar.TabIndex = 12;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // cboxRuta
-            // 
-            this.cboxRuta.FormattingEnabled = true;
-            this.cboxRuta.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboxRuta.Location = new System.Drawing.Point(179, 92);
-            this.cboxRuta.Margin = new System.Windows.Forms.Padding(4);
-            this.cboxRuta.Name = "cboxRuta";
-            this.cboxRuta.Size = new System.Drawing.Size(194, 37);
-            this.cboxRuta.TabIndex = 47;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // frm07Tarifas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 614);
-            this.Controls.Add(this.dgviewCrudEstaciones);
+            this.Controls.Add(this.dgviewCrudTarifas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "frm07Tarifas";
             this.Text = "frm07Tarifas";
+            this.Load += new System.EventHandler(this.frm07Tarifas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudEstaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudTarifas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -430,7 +441,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dgviewCrudEstaciones;
+        private System.Windows.Forms.DataGridView dgviewCrudTarifas;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;

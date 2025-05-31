@@ -18,7 +18,7 @@ namespace CAPADATOS
 
  
             // Mostrar estaciones
-            public DataTable MtMostrarEstaciones()
+            public DataTable MtdMostrarEstaciones()
             {
                 string QryMostrarEstaciones = "usp_estaciones_mostrar";
                 SqlDataAdapter adapter = new SqlDataAdapter(QryMostrarEstaciones, cd_Conexion.MtdAbrirConexion());

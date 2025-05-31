@@ -46,16 +46,16 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgviewCrudEstaciones = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.dgviewCrudEstaciones = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudEstaciones)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudEstaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -92,15 +92,13 @@
             // cboxRuta
             // 
             this.cboxRuta.FormattingEnabled = true;
-            this.cboxRuta.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
             this.cboxRuta.Location = new System.Drawing.Point(191, 94);
             this.cboxRuta.Margin = new System.Windows.Forms.Padding(4);
             this.cboxRuta.Name = "cboxRuta";
             this.cboxRuta.Size = new System.Drawing.Size(194, 37);
             this.cboxRuta.TabIndex = 44;
             this.cboxRuta.DropDown += new System.EventHandler(this.cboxRuta_DropDown);
+            this.cboxRuta.SelectedIndexChanged += new System.EventHandler(this.cboxRuta_SelectedIndexChanged_1);
             // 
             // label8
             // 
@@ -278,22 +276,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Cod.Ruta:";
             // 
-            // dgviewCrudEstaciones
-            // 
-            this.dgviewCrudEstaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgviewCrudEstaciones.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.dgviewCrudEstaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgviewCrudEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgviewCrudEstaciones.Location = new System.Drawing.Point(402, 0);
-            this.dgviewCrudEstaciones.Margin = new System.Windows.Forms.Padding(4);
-            this.dgviewCrudEstaciones.Name = "dgviewCrudEstaciones";
-            this.dgviewCrudEstaciones.ReadOnly = true;
-            this.dgviewCrudEstaciones.RowHeadersWidth = 51;
-            this.dgviewCrudEstaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgviewCrudEstaciones.Size = new System.Drawing.Size(911, 512);
-            this.dgviewCrudEstaciones.TabIndex = 36;
-            this.dgviewCrudEstaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewCrudEstaciones_CellClick);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
@@ -405,6 +387,23 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // dgviewCrudEstaciones
+            // 
+            this.dgviewCrudEstaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgviewCrudEstaciones.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dgviewCrudEstaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgviewCrudEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgviewCrudEstaciones.Location = new System.Drawing.Point(402, 0);
+            this.dgviewCrudEstaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.dgviewCrudEstaciones.Name = "dgviewCrudEstaciones";
+            this.dgviewCrudEstaciones.ReadOnly = true;
+            this.dgviewCrudEstaciones.RowHeadersWidth = 51;
+            this.dgviewCrudEstaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgviewCrudEstaciones.Size = new System.Drawing.Size(911, 512);
+            this.dgviewCrudEstaciones.TabIndex = 36;
+            this.dgviewCrudEstaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewCrudEstaciones_CellClick);
+            this.dgviewCrudEstaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewCrudEstaciones_CellContentClick);
+            // 
             // frm06Estaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -418,8 +417,8 @@
             this.Load += new System.EventHandler(this.frm06Estaciones_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudEstaciones)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudEstaciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -443,7 +442,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgviewCrudEstaciones;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
@@ -451,5 +449,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.ComboBox cboxRuta;
+        private System.Windows.Forms.DataGridView dgviewCrudEstaciones;
     }
 }

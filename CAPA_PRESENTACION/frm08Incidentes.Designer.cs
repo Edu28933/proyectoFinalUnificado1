@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboxTransporte = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtcodEmpelado = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgviewCrudIncidentes = new System.Windows.Forms.DataGridView();
@@ -52,7 +52,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.cboxTransporte = new System.Windows.Forms.ComboBox();
+            this.cboxEmpleado = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudIncidentes)).BeginInit();
             this.panel1.SuspendLayout();
@@ -61,6 +61,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.cboxEmpleado);
             this.groupBox1.Controls.Add(this.cboxTransporte);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -75,7 +76,6 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtBuscar);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtcodEmpelado);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -88,6 +88,15 @@
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Incidentes";
+            // 
+            // cboxTransporte
+            // 
+            this.cboxTransporte.FormattingEnabled = true;
+            this.cboxTransporte.Location = new System.Drawing.Point(231, 92);
+            this.cboxTransporte.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxTransporte.Name = "cboxTransporte";
+            this.cboxTransporte.Size = new System.Drawing.Size(129, 37);
+            this.cboxTransporte.TabIndex = 45;
             // 
             // label8
             // 
@@ -151,6 +160,7 @@
             // 
             // txtcodIncidente
             // 
+            this.txtcodIncidente.Enabled = false;
             this.txtcodIncidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodIncidente.Location = new System.Drawing.Point(195, 59);
             this.txtcodIncidente.Margin = new System.Windows.Forms.Padding(4);
@@ -209,6 +219,7 @@
             this.btnBuscar.TabIndex = 29;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -229,15 +240,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 38);
             this.label5.TabIndex = 12;
-            // 
-            // txtcodEmpelado
-            // 
-            this.txtcodEmpelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcodEmpelado.Location = new System.Drawing.Point(215, 137);
-            this.txtcodEmpelado.Margin = new System.Windows.Forms.Padding(4);
-            this.txtcodEmpelado.Name = "txtcodEmpelado";
-            this.txtcodEmpelado.Size = new System.Drawing.Size(170, 31);
-            this.txtcodEmpelado.TabIndex = 5;
             // 
             // label3
             // 
@@ -275,6 +277,7 @@
             this.dgviewCrudIncidentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgviewCrudIncidentes.Size = new System.Drawing.Size(934, 531);
             this.dgviewCrudIncidentes.TabIndex = 36;
+            this.dgviewCrudIncidentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgviewCrudIncidentes_CellClick);
             // 
             // panel1
             // 
@@ -308,6 +311,7 @@
             this.btnEliminar.TabIndex = 28;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -326,6 +330,7 @@
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAgregar
             // 
@@ -344,6 +349,7 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSalir
             // 
@@ -362,6 +368,7 @@
             this.btnSalir.TabIndex = 26;
             this.btnSalir.Text = "Cerrar";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnActualizar
             // 
@@ -380,18 +387,16 @@
             this.btnActualizar.TabIndex = 12;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // cboxTransporte
+            // cboxEmpleado
             // 
-            this.cboxTransporte.FormattingEnabled = true;
-            this.cboxTransporte.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboxTransporte.Location = new System.Drawing.Point(231, 92);
-            this.cboxTransporte.Margin = new System.Windows.Forms.Padding(4);
-            this.cboxTransporte.Name = "cboxTransporte";
-            this.cboxTransporte.Size = new System.Drawing.Size(129, 37);
-            this.cboxTransporte.TabIndex = 45;
+            this.cboxEmpleado.FormattingEnabled = true;
+            this.cboxEmpleado.Location = new System.Drawing.Point(231, 136);
+            this.cboxEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxEmpleado.Name = "cboxEmpleado";
+            this.cboxEmpleado.Size = new System.Drawing.Size(129, 37);
+            this.cboxEmpleado.TabIndex = 46;
             // 
             // frm08Incidentes
             // 
@@ -403,6 +408,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm08Incidentes";
             this.Text = "frm08Incidentes";
+            this.Load += new System.EventHandler(this.frm08Incidentes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgviewCrudIncidentes)).EndInit();
@@ -427,7 +433,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtcodEmpelado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgviewCrudIncidentes;
@@ -438,5 +443,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.ComboBox cboxTransporte;
+        private System.Windows.Forms.ComboBox cboxEmpleado;
     }
 }

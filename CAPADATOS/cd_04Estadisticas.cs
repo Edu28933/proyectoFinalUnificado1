@@ -23,5 +23,24 @@ namespace CAPADATOS
             return dtMostrarEstadisticas;
         }
 
+        public DataTable MtdObtenerEstadisticas(int codigoTransporte, DateTime fecha)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT " +
+                "dbo.fn_TotalIngresos(@CodigoTransporte, @Fecha) AS TotalIngresos, " +
+                "dbo.fn_TotalIncidentes(@CodigoTransporte, @Fecha) AS TotalIncidentes, " +
+                "dbo.fn_MonedaMasUtilizada(@CodigoTransporte, @Fecha) AS MonedaMasUsada, " +
+                "dbo.fn_TotalPasajeros(@CodigoTransporte, @Fecha) AS TotalPasajeros", cd_Conexion.MtdAbrirConexion());
+
+            cmd.Parameters.AddWithValue("@CodigoTransporte", codigoTransporte);
+            cmd.Parameters.AddWithValue("@Fecha", fecha);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            cd_Conexion.MtdCerrarConexion();
+            return dt;
+        }
+
     }
 }
