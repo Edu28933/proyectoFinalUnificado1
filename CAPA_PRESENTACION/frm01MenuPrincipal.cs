@@ -118,5 +118,34 @@ namespace CAPA_PRESENTACION
         {
             mtdAbrirFormularios(new FrmPasajeros());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mtdAbrirFormularios(new FrmHorarios());
+
+        }
+
+        private void btnEstaciones_Click(object sender, EventArgs e)
+        {
+            mtdAbrirFormularios(new frm06Estaciones());
+        }
+
+        private void btnTarifas_Click(object sender, EventArgs e)
+        {
+            mtdAbrirFormularios(new frm07Tarifas());
+
+        }
+
+        private void btnIncidentes_Click(object sender, EventArgs e)
+        {
+            mtdAbrirFormularios(new frm08Incidentes());
+
+        }
+
+        private void btnMantenimiento_Click(object sender, EventArgs e)
+        {
+            mtdAbrirFormularios(new frm09Mantenimientos());
+
+        }
     }
 }
